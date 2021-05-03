@@ -26,10 +26,6 @@ def main():
        elif user ==4 :
            for key in sorted(address_book):
                print(key,"의 전화번호:", address_book[key])
-       elif user ==5 : #파일불러오기
-           with open('phonedata.bin','rb') as f:
-               address_book = pickle.load(f)
-               print("파일을 불러왔습니다")
        else :
            with open('phonedata.bin','wb') as f:
                pickle.dump(address_book,f)
@@ -52,8 +48,7 @@ def display_menu() :
    print("2. 연락처 삭제")
    print("3. 연락처 검색")
    print("4. 연락처 출력")
-   print("5. 연락처 불러오기")
-   print("6. 종료")
+   print("5. 종료")
    select = int(input("메뉴 항목을 선택하시오: "))
    return select
 
